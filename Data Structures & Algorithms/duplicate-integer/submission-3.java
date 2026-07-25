@@ -1,10 +1,14 @@
-
 class Solution {
     public boolean hasDuplicate(int[] nums) {
-        ArrayList t = new ArrayList<>();
+        Set<Integer> keyList = new HashSet<>();
+
         for(int x : nums){
-            if(t.contains(x)) return true;
-            t.add(x);
-        } return false;
+            if(keyList.contains(x)){
+                return true;
+            } else {
+                keyList.add(x);
+            }
+        }
+        return false;
     }
 }
